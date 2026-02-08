@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Hand:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: #8234db;
+    --secondary-color: #c92ecc;
+    --background-color: #f5f5f5;
+    --text-color: #333333;
+    --third-color: #ff6f61;
+    --forth-color: #8d8d8d;
+    --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-size-base: 1rem;
+    --line-height-base: 1.5;
+    --spacing-unit: 8px;
+    --section-spacing: 10rem 2rem;
+}
+
+
+
+html, body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+header{
+    position: fixed;
+    top: 1rem;
+    --primary-color: #e702eb;
+    background-color: var(--primary-color);
+    box-shadow: 0 0 15px 30px var(--primary-color);
+    height: 15vh;
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 2rem;
+    border-radius: 20px;
+    width: clamp(60%, 20rem, 85%);
+    --secondary-color:rgb(62, 0, 78);
+    background: var(--secondary-color);
+    box-shadow: 0 1px 3px 1px rgba(53, 53, 53, 0.186);
+    z-index: 900;
+}
+
+.logo{
+    --third-color: #fa0798;
+    font-family: 'Edu SA Hand', sans-serif;
+    font-weight: 100;
+    font-size: 1.5rem;
+    color: var(--third-color);
+}
+
+.logo-i{
+    --primary-color: #8234db;
+    color: var(--primary-color);
+}
+
+nav{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--spacing-unit) * 3);
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--third-color);
+}
+
+.hamurger-menu{
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    position: relative;
+    bottom: 0.2rem;
+    right: 1rem;
+}
+
+.menu-icon{
+    width: 3rem;
+    height: 3em;
+}
+
+#hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-container{
+    margin-top: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    color: white;
+    padding: 0 1rem;
+    background-image: linear-gradient(to bottom, #cb03c8, #e900e9fe, #bb00ff, rgb(96, 0, 131));
+    height: 32rem;
+    width: 100vw;
+}
+
+.hero-intro{
+    font-family: 'Edu SA Hand', Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    font-weight: 100;
+}
+
+.hero-subintro{
+    font-family: 'Edu SA Hand', Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 100;
+    --text-color: #e1b9fa;
+    color: var(--text-color);
+}
+
+.get-started-btn{
+    --forth-color: #ffffff;
+    position: relative;
+    top: 5rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-image: linear-gradient(to left, #7a0753, #ff0080);
+    color: var(--third-color);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+
+.get-started-btn:hover{
+    transform: scale(1.02);
+    box-shadow: 0 0 6px 2px var(--secondary-color);
+}
+
+.about-section{
+    margin: var(--section-spacing);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.about-header{
+    font-family:'Special Gothic Expanded One', Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.about-intro{
+    font-size: 1rem;
+    max-width: 600px;
+    text-align: center;
+    --forth-color: #666565;
+    color: var(--forth-color);
+    font-weight: 100;
+}
+
+.file-upload-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.file-upload-input{
+    display: none;
+
+}
+
+.upload-btn{
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.upload-btn:hover{
+    box-shadow: 0 0 6px 2px var(--secondary-color);
+}
+
+.file-name{
+    font-size: 0.9rem;
+    color: var(--forth-color);
+    font-style: italic;
+    border: 2px dashed var(--forth-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+}
+
+.instructions-section{
+    margin: var(--section-spacing);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.instructions-header{
+    font-family:'Special Gothic Expanded One', Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.mobile-guide{
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    max-width: 600px;
+    text-align: center;
+    --forth-color: #666565;
+    color: var(--forth-color);
+    font-weight: 100;
+    line-height: 1.6;
+}
+
+.slider-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100vw;
+}
+
+.steps-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.step-header-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 0.5rem; 
+}
+
+.step-header{
+    font-family:'Edu SA Hand', Arial, Helvetica, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 100;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.step-change-btn-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 6rem;
+}
+
+.prev-btn, .next-btn{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    --secondary-color:rgb(62, 0, 78);
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.step-description{
+    font-size: 1rem;
+    margin: 2rem;
+    text-align: center;
+    --forth-color: #666565;
+    color: var(--forth-color);
+    font-weight: 100;
+    line-height: 1.6;
+}
+
+.slide-image-container{
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.slide-image-container::-webkit-scrollbar {
+    width: 0.4rem;
+}
+
+.slide-image-container::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.slide-image-container::-webkit-scrollbar-thumb {
+    background-color: rgba(194, 194, 194, 0.921);
+}
+
+.step-image{
+    position: relative;
+    top: 9rem;
+    border-radius: 20px;
+}

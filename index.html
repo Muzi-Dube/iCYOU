@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>iCYOU - follower analyzer</title>
+        <link rel="stylesheet" href="./styles/style.css">
+        <script type="module" src="./scripts/main.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <div class="header-container">
+                <button class="hamurger-menu">
+                    <img src="./assets/menu.svg" alt="menu icon" width="40" height="40" class="menu-icon">
+                </button>
+                <span class="logo"><span class="logo-i">i</span>CYOU</span>
+            </div>
+                <div class="navigation-container">
+                    <nav>
+                        <a href="#features">Features</a>
+                        <a href="#about">About</a>
+                        <a href="#contact">FAQ</a>
+                        <a href="#help">Help</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section id="hero" class="hero-section">
+                <div class="hero-container">
+                    <h1 class="hero-intro">Hello!</h1>
+                    <p class="hero-subintro">Ready to analyze your profile?</p>
+                    <button class="get-started-btn">Get Started</button>
+                </div>
+            </section>
+
+            <section id="about" class="about-section">
+                <h1 class="about-header">Find out who doesn't follow you back.</h1>
+                <p class="about-intro">iCYOU helps you identify users who don't follow you back on social media platforms. Simply drop your account data and let us do the rest!</p>
+
+                <div class="file-upload-wrapper">
+                    <label for="file-upload" class="upload-btn">Choose File</label>
+                    <input type="file" class="file-upload-input" id="file-upload" accept=".json" />
+                    <span class="file-name">No file selected</span>
+                </div>
+            </section>
+
+            <section class="instructions-section">
+                <h1 class="instructions-header">How To Get Your Data</h1>
+                <h2 class="mobile-guide">For Mobile</h2>
+                <div class="slider-container">
+                    <div class="steps-container">
+                        <div class="step-header-container">
+                            <h3 class="step-header">Step 1</h3>
+                            <div class="step-change-btn-container">
+                                <button class="prev-btn">
+                                    P
+                                </button>
+                                <button class="next-btn">
+                                    N
+                                </button>
+                            </div>
+                        </div>
+                        <p class="step-description">Click on the menu button in the top right corner of your screen.</p>
+                    </div>
+                    <div class="slide-image-container">
+                        <img src="./assets/Mobile_Screenshots(iCYOU)/step_1.jpg" alt="step 1" class="step-image" width="300" height="600">
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
