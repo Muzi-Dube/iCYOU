@@ -9,21 +9,20 @@
     </head>
 
     <body>
-        <header>
+        <header class="header">
             <div class="header-container">
-                <button class="hamurger-menu">
+                <button class="hamburger-menu">
                     <img src="./assets/menu.svg" alt="menu icon" width="40" height="40" class="menu-icon">
                 </button>
                 <span class="logo"><span class="logo-i">i</span>CYOU</span>
             </div>
-                <div class="navigation-container">
+            <div class="navigation-container">
                     <nav>
                         <a href="#features">Features</a>
                         <a href="#about">About</a>
                         <a href="#contact">FAQ</a>
                         <a href="#help">Help</a>
                     </nav>
-                </div>
             </div>
         </header>
 
@@ -45,10 +44,13 @@
                     <input type="file" class="file-upload-input" id="file-upload" accept=".json" />
                     <span class="file-name">No file selected</span>
                 </div>
+                <div class="notice">
+                    <p class="notice-text">Note: Only JSON/.json files supported. Make sure you export & upload your data in the correct format.</p>
+                </div>
             </section>
 
             <section class="instructions-section">
-                <h1 class="instructions-header">How To Get Your Data</h1>
+                <h1 class="instructions-header">How Do You Get Your Data?</h1>
                 <h2 class="mobile-guide">For Mobile</h2>
                 <div class="slider-container">
                     <div class="steps-container">
@@ -57,9 +59,11 @@
                             <div class="step-change-btn-container">
                                 <button class="prev-btn">
                                     P
+                                    <img src="./assets/arrow-prev-svgrepo-com.svg" alt="previous icon" width="20" height="20" class="prev-icon">
                                 </button>
                                 <button class="next-btn">
                                     N
+                                    <img src="./assets/arrow-next-svgrepo-com.svg" alt="next icon" width="20" height="20" class="next-icon">
                                 </button>
                             </div>
                         </div>
@@ -68,8 +72,87 @@
                     <div class="slide-image-container">
                         <img src="./assets/Mobile_Screenshots(iCYOU)/step_1.jpg" alt="step 1" class="step-image" width="300" height="600">
                     </div>
+                    <div class="notice">
+                        <p class="instructions-notice-text">Note: These screenshots are for illustrative purposes only, and may not reflect the current UI of your device.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="why-us" class="why-us-section">
+                <div class="why-us-header-container">
+                    <h1 class="why-us-header">Why Choose iCYOU?</h1>
+                    <div class="why-us-points-container">
+                        <div class="why-us-points why-us-points-inview">
+                            <h2 class="why-us-point-header"><span class="first-letter">S</span>ecurity</h2>
+                            <p class="why-us-point why-us-point-inview">At iCYOU, we proritize the integrity of your personal information. No need to share sensitive data like your passwords, as we only make use of exported summary data about your account.</p>
+                        </div>
+                        <div class="why-us-points why-us-points-inview">
+                            <h2 class="why-us-point-header"><span class="first-letter">A</span>ccessibility</h2>
+                            <p class="why-us-point">iCYOU is designed to be accessible to all users, regardless of their abilities or disabilities. We ensure that our platform is easy to navigate and use for everyone.</p>
+                        </div>
+                        <div class="why-us-points">
+                            <h2 class="why-us-point-header"><span class="first-letter">R</span>eliability</h2>
+                            <p class="why-us-point">iCYOU is built with reliability in mind. Our platform is designed to be fast, accurate, and consistent in delivering results.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-logo-section">
+                    <p class="footer-logo"><span class="footer-logo-i">i</span>CYOU</p>
+                </div>
+
+                <div class="footer-content">
+                    <div class="footer-links-column">
+                        <h3 class="footer-column-header">Product</h3>
+                        <ul>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#how-it-works">How It Works</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-links-column">
+                        <h3 class="footer-column-header">Company</h3>
+                        <ul>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#blog">Blog</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-links-column">
+                        <h3 class="footer-column-header">Legal</h3>
+                        <ul>
+                            <li><a href="#privacy">Privacy Policy</a></li>
+                            <li><a href="#terms">Terms of Service</a></li>
+                            <li><a href="#cookies">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-social-section">
+                        <h3 class="footer-column-header">Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Social Link 1">
+                                <img src="./assets/linkedin-svgrepo-com.svg" alt="linkedin" width="24" height="24">
+                            </a>
+                            <a href="#" class="social-link" aria-label="Social Link 2">
+                                <img src="./assets/github-142-svgrepo-com.svg" alt="github" width="24" height="24">
+                            </a>
+                            <a href="#" class="social-link" aria-label="Social Link 3">
+                                <img src="./assets/instagram-svgrepo-com.svg" alt="Instagram" width="24" height="24">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p class="footer-copyright">&copy; 2025 iCYOU. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>

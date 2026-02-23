@@ -1,12 +1,7 @@
-// File upload functionality
-const fileInput = document.getElementById('file-upload');
-const fileNameDisplay = document.querySelector('.file-name');
+import {  fileUploadHandler } from './file_upload.js';
+import { onScrollAnimations } from './scroll_triggers.js';
 
-fileInput.addEventListener('change', (event) => {
-    const file = event.target.files[0];
-    if (file) {
-        fileNameDisplay.textContent = `Selected: ${file.name}`;
-    } else {
-        fileNameDisplay.textContent = 'No file selected';
-    }
-});
+// Initialize menu toggle functionality
+onScrollAnimations();
+// Initialize file upload functionality
+fileUploadHandler();

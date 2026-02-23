@@ -36,9 +36,10 @@ html, body {
 }
 
 header{
+    transition: 0.5s ease-in;
     position: fixed;
     top: 1rem;
-    --primary-color: #e702eb;
+    --primary-color: #da00d6;
     background-color: var(--primary-color);
     box-shadow: 0 0 15px 30px var(--primary-color);
     height: 15vh;
@@ -50,16 +51,65 @@ header{
 }
 
 .header-container{
+    transition: 0.8s ease-in;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.9rem 2rem;
-    border-radius: 20px;
-    width: clamp(60%, 20rem, 85%);
+    border-radius: 30px;
+    margin-top: 1.5rem;
+    width: clamp(60%, 22rem, 85%);
+    height: 5rem;
     --secondary-color:rgb(62, 0, 78);
     background: var(--secondary-color);
-    box-shadow: 0 1px 3px 1px rgba(53, 53, 53, 0.186);
+    box-shadow: 0 2.5px 6px 0.5px rgba(0, 0, 0, 0.228);
     z-index: 900;
+}
+
+.header-changed{
+    transition:  0.5s ease-in;
+    background-color: var(--background-color);
+    box-shadow: 0 0 15px 30px var(--background-color);
+}
+
+.header-container-changed{
+    transition: background-color 0.8s ease-in;
+    background: rgb(244, 244, 244);
+    animation-name: menuChange;
+    animation-duration: 1s;
+}
+
+@keyframes menuChange {
+    0% {
+        transform: translateX(-10px);
+    }
+    20% {
+        transform: translateX(40px);
+    }
+    30% {
+        transform: translateX(-40px);
+    }
+    40% {
+        transform: translateX(30px);
+    }
+    50% {
+        transform: translateX(-30px);
+    }
+    60% {
+        transform: translateX(20px);
+    }
+    70% {
+            transform: translateX(-20px);
+        }
+    80% {
+        transform: translateX(10px);
+    }
+    90% {
+            transform: translateX(-10px);
+        }
+    100% {
+        transform: translateX(0px);
+    }
 }
 
 .logo{
@@ -68,6 +118,19 @@ header{
     font-weight: 100;
     font-size: 1.5rem;
     color: var(--third-color);
+    animation-name: logoIn;
+    animation-duration: 2s;
+}
+
+@keyframes logoIn {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .logo-i{
@@ -92,7 +155,7 @@ a:hover {
     color: var(--third-color);
 }
 
-.hamurger-menu{
+.hamburger-menu{
     width: 2rem;
     height: 2rem;
     cursor: pointer;
@@ -101,6 +164,19 @@ a:hover {
     position: relative;
     bottom: 0.2rem;
     right: 1rem;
+    animation-name: hamurgerMenuIn;
+    animation-duration: 1s;
+}
+
+@keyframes hamurgerMenuIn{
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .menu-icon{
@@ -117,7 +193,7 @@ a:hover {
 
 .hero-container{
     margin-top: 2rem;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -127,7 +203,6 @@ a:hover {
     color: white;
     padding: 0 1rem;
     background-image: linear-gradient(to bottom, #cb03c8, #e900e9fe, #bb00ff, rgb(96, 0, 131));
-    height: 32rem;
     width: 100vw;
 }
 
@@ -135,6 +210,19 @@ a:hover {
     font-family: 'Edu SA Hand', Arial, Helvetica, sans-serif;
     font-size: 3rem;
     font-weight: 100;
+    animation-name: heroIntroIn;
+    animation-duration: 1.5s;
+}
+
+@keyframes heroIntroIn {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .hero-subintro{
@@ -143,6 +231,19 @@ a:hover {
     font-weight: 100;
     --text-color: #e1b9fa;
     color: var(--text-color);
+    animation-name: heroSubIntroIn;
+    animation-duration: 2s;
+}
+
+@keyframes heroSubIntroIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .get-started-btn{
@@ -159,6 +260,17 @@ a:hover {
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: 0.3s ease;
+    animation-name: getStartedBtnIn;
+    animation-duration: 3s;
+}
+
+@keyframes getStartedBtnIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .get-started-btn:hover{
@@ -176,12 +288,31 @@ a:hover {
 }
 
 .about-header{
+    opacity: 0;
     font-family:'Special Gothic Expanded One', Arial, Helvetica, sans-serif;
     font-size: 2rem;
     text-align: center;
 }
 
+.about-header-inview{
+    opacity: 1;
+    animation-name: aboutHeaderIn;
+    animation-duration: 1s;
+}
+
+@keyframes aboutHeaderIn {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 .about-intro{
+    opacity: 0;
     font-size: 1rem;
     max-width: 600px;
     text-align: center;
@@ -190,13 +321,48 @@ a:hover {
     font-weight: 100;
 }
 
+.about-intro-inview{
+    opacity: 1;
+    animation-name: aboutIntroIn;
+    animation-duration: 1s;
+}
+
+@keyframes aboutIntroIn {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 .file-upload-wrapper{
+    opacity: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    margin-top: 1rem;
+    margin-top: 3rem;
+}
+
+.file-upload-wrapper-inview{
+    opacity: 1;
+    animation-name: fileUploadWrapperIn;
+    animation-duration: 1s;
+}
+
+@keyframes fileUploadWrapperIn {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .file-upload-input{
@@ -218,6 +384,36 @@ a:hover {
     display: inline-block;
 }
 
+.upload-btn-inview{
+    animation-name: uploadBtnIn;
+    animation-duration: 1s;
+}
+
+@keyframes uploadBtnIn {
+    0% {
+        
+        transform: scale(1.05);
+    }
+    15% {
+        transform: rotateZ(5deg) scale(1.05);
+    }
+    30% {
+        transform: rotateZ(-5deg) scale(1.05);
+    }
+    45% {
+        transform: rotateZ(5deg) scale(1.05);
+        }
+    60% {
+        transform: rotateZ(-5deg) scale(1.05);
+    }
+    75% {
+        transform: rotateZ(0deg) scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 .upload-btn:hover{
     box-shadow: 0 0 6px 2px var(--secondary-color);
 }
@@ -227,8 +423,10 @@ a:hover {
     color: var(--forth-color);
     font-style: italic;
     border: 2px dashed var(--forth-color);
-    padding: 0.8rem 1.5rem;
+    padding: 0.7rem 1.5rem;
     border-radius: 10px;
+    width: 15rem;
+    text-align: center;
 }
 
 .instructions-section{
@@ -240,13 +438,32 @@ a:hover {
 }
 
 .instructions-header{
+    opacity: 0;
     font-family:'Special Gothic Expanded One', Arial, Helvetica, sans-serif;
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 3rem;
+    margin: 0 1rem 4rem;
+}
+
+.instructions-header-inview{
+    opacity: 1;
+    animation-name: instructionsHeaderIn;
+    animation-duration: 1s;
+}
+
+@keyframes instructionsHeaderIn {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .mobile-guide{
+    opacity: 0;
     margin-bottom: 2rem;
     font-size: 1rem;
     max-width: 600px;
@@ -255,6 +472,23 @@ a:hover {
     color: var(--forth-color);
     font-weight: 100;
     line-height: 1.6;
+}
+
+.mobile-guide-inview{
+    opacity: 1;
+    animation-name: mobileGuideIn;
+    animation-duration: 1s;
+}
+
+@keyframes mobileGuideIn {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .slider-container{
@@ -280,10 +514,10 @@ a:hover {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-bottom: 0.5rem; 
 }
 
 .step-header{
+    opacity: 0;
     font-family:'Edu SA Hand', Arial, Helvetica, sans-serif;
     font-size: 2.5rem;
     font-weight: 100;
@@ -291,31 +525,88 @@ a:hover {
     color: var(--primary-color);
 }
 
+.step-header-inview{
+    opacity: 1;
+    animation-name: stepHeaderIn;
+    animation-duration: 1s; 
+}
+
+@keyframes stepHeaderIn {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 .step-change-btn-container{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 6rem;
+    width: 7rem;
 }
 
 .prev-btn, .next-btn{
+    opacity: 0;
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
     --secondary-color:rgb(62, 0, 78);
     background-color: var(--secondary-color);
-    color: white;
+    color: transparent;
     border: none;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1rem;
+    box-shadow: 0 1px 3px 1.5px #00000037;
+    transition: 0.2s ease-in;
+}
+
+.prev-btn-inview{
+    opacity: 1;
+    animation-name: stepChangeBtnIn;
+    animation-duration: 1s;
+}
+.next-btn-inview{
+    opacity: 1;
+    animation-name: stepChangeBtnIn;
+    animation-duration: 1s;
+}
+
+@keyframes stepChangeBtnIn {
+    0% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.next-icon{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    right: 0.2rem;
+}
+
+.prev-icon{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    right: 0.4rem;
 }
 
 .step-description{
+    opacity: 0;
     font-size: 1rem;
-    margin: 2rem;
+    margin: 1rem 2rem 2rem;
     text-align: center;
     --forth-color: #666565;
     color: var(--forth-color);
@@ -323,9 +614,26 @@ a:hover {
     line-height: 1.6;
 }
 
+.step-description-inview{
+    opacity: 1;
+    animation-name: stepDescriptionIn;
+    animation-duration: 1s;
+}
+
+@keyframes stepDescriptionIn {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 .slide-image-container{
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: 20rem;
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -345,11 +653,339 @@ a:hover {
 }
 
 .slide-image-container::-webkit-scrollbar-thumb {
-    background-color: rgba(194, 194, 194, 0.921);
+    background: transparent;
 }
 
 .step-image{
+    opacity: 0;
     position: relative;
     top: 9rem;
     border-radius: 20px;
+}
+
+.step-image-inview{
+    opacity: 1;
+    animation-name: stepImageIn;
+    animation-duration: 2s;
+}
+
+@keyframes stepImageIn {
+    0% {
+        transform: translateY(400px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.notice{
+    width: 20em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instructions-notice-text{
+    opacity: 0;
+    font-size: 0.8rem;
+    color: var(--forth-color);
+    font-weight: 100;
+    text-align: center;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+.instructions-notice-text-inview{
+    opacity: 1;
+    animation-name: noticeTextIn;
+    animation-duration: 1.5s;
+}
+
+@keyframes noticeTextIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.why-us-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.why-us-header{
+    opacity: 0;
+    font-family:'Special Gothic Expanded One', Arial, Helvetica, sans-serif;
+    font-size: 2.2rem;
+    text-align: center;
+    margin: 0 2rem;
+}
+
+.why-us-point-header{
+    font-family:'Edu SA Hand', Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 100;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.why-us-points-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 4rem;
+    max-width: 30em;
+}
+
+.why-us-points{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 15px;
+    background-color: rgb(238, 238, 238);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0.5rem 2rem;
+}
+
+.why-us-header-inview{
+    opacity: 1;
+    animation-name: whyUsHeaderIn;
+    animation-duration: 1s;
+}
+
+@keyframes whyUsHeaderIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.why-us-point{
+    text-align: center;
+    --forth-color: #666565;
+    color: var(--forth-color);
+    font-weight: 100;
+    font-size: 0.8rem;
+}
+
+.why-us-points-inview{
+    animation-name: whyUsPointsIn;
+    animation-duration: 1s;
+}
+
+@keyframes whyUsPointsIn {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.first-letter{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Footer Styles */
+footer{
+    opacity: 0;
+    background-color: rgb(238, 238, 238);
+    margin-top: 10rem;
+    padding: 3rem 2rem 2rem;
+}
+
+.footer-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.footer-inview{
+    opacity: 1;
+    animation-name: footerContainerIn;
+    animation-duration: 2s;
+}
+
+@keyframes footerContainerIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.footer-logo-section{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-logo{
+    font-family: 'Edu SA Hand', sans-serif;
+    font-weight: 100;
+    font-size: 2rem;
+    --text-color: #3333333a;
+    color: var(--text-color);
+}
+
+.footer-logo-i{
+    --text-color: #28282855;
+    color: var(--text-color);
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 3rem;
+}
+
+.footer-links-column{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-links-column ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.footer-links-column a{
+    color: var(--forth-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 100;
+    transition: 0.2s ease;
+}
+
+.footer-links-column a:hover{
+    color: var(--primary-color);
+}
+
+.footer-column-header{
+    font-family: 'Special Gothic Expanded One', Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 100;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+}
+
+.footer-social-section{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.social-links{
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-link{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: #b8b8b8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: 0.3s ease;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.social-link:hover{
+    --secondary-color: #9000ff5d;
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.social-link img{
+    width: 2rem;
+    height: 2rem;
+}
+
+.footer-bottom{
+    border-top: 1px solid #d0d0d0;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.footer-copyright{
+    color: var(--forth-color);
+    font-size: 0.9rem;
+    font-weight: 100;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-content{
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .footer-social-section{
+        grid-column: 1 / -1;
+    }
+
+    .footer-logo-section{
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    footer{
+        padding: 2rem 1rem 1.5rem;
+    }
+
+    .footer-container{
+        gap: 2rem;
+    }
+
+    .footer-content{
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .footer-social-section{
+        grid-column: 1;
+    }
+
+    .footer-column-header{
+        font-size: 1rem;
+    }
 }
