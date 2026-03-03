@@ -1,4 +1,4 @@
-import {  fileUploadHandler } from './file_upload.js';
+import { fileUploadHandler } from './file_upload.js';
 import { onScrollAnimations } from './scroll_triggers.js';
 
 // Initialize menu toggle functionality

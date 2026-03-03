@@ -6,15 +6,17 @@ export function onScrollAnimations() {
     footerContainerOnView();
 }
 
+
+// This is data for the elements that will be animated on scroll. It includes references to the header, about section, hero section, instructions section, and footer, among others. These references are used in the various animation handler functions to add or remove classes that trigger CSS animations when the elements come into view.
 const elements = {
     headerContainer: document.querySelector('.header-container'),
     header: document.querySelector('.header'),
     aboutSection: document.querySelector('.about-section'),
-    HeroSection: document.querySelector('.hero-section'),
+    heroSection: document.querySelector('.hero-section'),
     aboutHeader: document.querySelector('.about-header'),
     aboutIntro: document.querySelector('.about-intro'),
     fileUploadWrapper: document.querySelector('.file-upload-wrapper'),
-    noticeText: document.querySelector('.notice-text'),
+    uploadNoticeText: document.querySelector('.upload-notice-text'),
     uploadBtn: document.querySelector('.upload-btn'),
     instructionsSection: document.querySelector('.instructions-section'),
     instructionsHeader: document.querySelector('.instructions-header'),
@@ -41,17 +43,20 @@ function headerAnimationsHandler() {
 
     const headerObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            if (!entry.isIntersecting) {
                 elements.headerContainer.classList.add('header-container-changed');
-                headerObserver.unobserve(elements.aboutSection);
                 elements.header.classList.add('header-changed');
             }
+            else{
+                elements.headerContainer.classList.remove('header-container-changed');
+                elements.header.classList.remove('header-changed');
+            }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.3 });
 
-    headerObserver.observe(elements.aboutSection);
+    headerObserver.observe(elements.heroSection);
 
-    const headerReturnObserver = new IntersectionObserver((entries) => {
+    /*onst headerReturnObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 elements.headerContainer.classList.remove('header-container-changed');
@@ -62,10 +67,11 @@ function headerAnimationsHandler() {
             }
         });
         }, { threshold: 0.3 });
-    headerReturnObserver.observe(elements.HeroSection);
+    headerReturnObserver.observe(elements.HeroSection);*/
 
 }
 
+// This function handles the animation for the about section when it comes into view. It adds classes to trigger the animations for the header, intro, file upload wrapper, notice text, and upload button, and then unobserves the section to prevent repeated triggers.
 function aboutSectionOnView() {
 
     const aboutObserver = new IntersectionObserver((entries) => {
@@ -77,7 +83,7 @@ function aboutSectionOnView() {
                 }, 500);
                 setTimeout(() => {
                     elements.fileUploadWrapper.classList.add('file-upload-wrapper-inview');
-                    elements.noticeText.classList.add('notice-text-inview');
+                    elements.uploadNoticeText.classList.add('upload-notice-text-inview');
                 }, 1000);
                 setTimeout(() => {
                     elements.uploadBtn.classList.add('upload-btn-inview');
@@ -91,6 +97,7 @@ function aboutSectionOnView() {
     aboutObserver.observe(elements.aboutSection);
 }
 
+// This function handles the animation for the instructions section when it comes into view. It adds classes to trigger the animations for the header, guide, steps, and images, and then unobserves the section to prevent repeated triggers.
 function instructionsSectionOnView() {
     const instructionsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -104,19 +111,19 @@ function instructionsSectionOnView() {
                 }, 1000);
                 setTimeout(() => {
                     elements.previousBtn.classList.add('prev-btn-inview');
-                }, 1500);
+                }, 1200);
                 setTimeout(() => {
                     elements.nextBtn.classList.add('next-btn-inview');
-                }, 1700);
+                }, 1300);
                 setTimeout(() => {
                     elements.stepDescription.forEach(description => {
                         description.classList.add('step-description-inview');
                     });
-                }, 1400);
+                }, 1300);
                 setTimeout(() => {
                     elements.instructionsImage.classList.add('step-image-inview');
                     elements.instructionsNoticeText.classList.add('instructions-notice-text-inview');
-                }, 2000);
+                }, 900);
 
                 instructionsObserver.unobserve(elements.instructionsSection);
             }
@@ -126,6 +133,7 @@ function instructionsSectionOnView() {
     instructionsObserver.observe(elements.instructionsSection);
 }
 
+// This function handles the animation for the "Why Us" section when it comes into view. It adds classes to trigger the animations for the header and points, and then unobserves the section to prevent repeated triggers.
 function whyUsSectionOnView() {
     const whyUsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -143,6 +151,8 @@ function whyUsSectionOnView() {
     whyUsObserver.observe(elements.whyUsSection);
 }
 
+
+//This function handles the animation for the footer section when it comes into view. It adds a class to trigger the animation and then unobserves the footer to prevent repeated triggers.
 function footerContainerOnView() {
     const footerObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
