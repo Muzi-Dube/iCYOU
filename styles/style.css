@@ -159,11 +159,11 @@ header{
     top: 20vh;
     background: rgb(245, 245, 245);
     box-shadow: 0 2.5px 6px 0.5px rgba(0, 0, 0, 0.228);
-    width: clamp(22em, 95%, 10rem);
+    width: clamp(350px, 50vw, 60%);
     border-radius: 30px;
     height: 21rem;
     animation-name: menuIn;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
 }
 
 @keyframes menuIn{
@@ -331,9 +331,17 @@ header{
 .menu-footer{
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     width: 100%;
     height: 40%;
+}
+
+.menu-footer-logo-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hamburger-menu{
@@ -509,7 +517,7 @@ header{
     text-align: center;
     --forth-color: #666565;
     color: var(--forth-color);
-    font-weight: 100;
+    font-weight: 300;
     margin: 0 1.5rem;
 }
 
@@ -910,7 +918,7 @@ header{
     opacity: 0;
     font-size: 0.8rem;
     color: var(--forth-color);
-    font-weight: 100;
+    font-weight: 300;
     text-align: center;
     line-height: 1.4;
     font-style: italic;
@@ -974,7 +982,7 @@ header{
     text-align: center;
     --forth-color: #666565;
     color: var(--forth-color);
-    font-weight: 100;
+    font-weight: 300;
     line-height: 1.6;
 }
 
@@ -1114,7 +1122,7 @@ header{
     text-align: center;
     --forth-color: #666565;
     color: var(--forth-color);
-    font-weight: 100;
+    font-weight: 300;
     line-height: 1.6;
 }
 
@@ -1193,7 +1201,7 @@ header{
     opacity: 0;
     font-size: 0.8rem;
     color: var(--forth-color);
-    font-weight: 100;
+    font-weight: 300;
     text-align: center;
     line-height: 1.4;
     font-style: italic;
@@ -1234,7 +1242,7 @@ header{
 .why-us-point-header{
     font-family:'Edu SA Hand', Arial, Helvetica, sans-serif;
     font-size: 1.5rem;
-    font-weight: 100;
+    font-weight: 300;
     text-align: center;
     color: var(--secondary-color);
 }
@@ -1246,7 +1254,7 @@ header{
     align-items: center;
     gap: 1rem;
     margin-top: 4rem;
-    max-width: 30em;
+    width: 100%;
 }
 
 .why-us-points{
@@ -1261,6 +1269,7 @@ header{
     background-color: rgb(238, 238, 238);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 0.5rem 2rem;
+    max-width:clamp(25em, 70%, 200px);
 }
 
 .why-us-header-inview{
@@ -1284,7 +1293,7 @@ header{
     text-align: center;
     --forth-color: #666565;
     color: var(--forth-color);
-    font-weight: 100;
+    font-weight: 300;
     font-size: 0.8rem;
 }
 
@@ -1496,6 +1505,48 @@ footer{
     }
 }
 
+@media(min-width: 720px){
+    .hero-intro{ 
+        font-size: 3.3rem;
+    }
+
+    .hero-subintro{
+        font-size: 1.3rem;
+    }
+
+    .about-header{
+        font-size: 2.5rem;
+        margin: 0 5rem;
+    }
+
+    .about-intro{
+        font-size: 1.3rem;
+        margin: 0 2rem;
+    }
+    
+    .file-name{
+        width: 40%;
+    }
+
+    .instructions-header{
+        font-size: 2.5rem;
+        margin: 0 5rem 2rem;
+    }
+
+    .step-description{
+        font-size: 1.2rem;
+        margin: 1rem 2rem 3rem;
+    }
+
+    .step-header{
+        font-size: 2.8rem;
+    }
+
+    .why-us-header{
+        font-size: 2.5rem;
+        margin: 0 5rem 2rem;
+    }
+}
 
 
 .header-results-page{
@@ -1539,7 +1590,7 @@ footer{
     margin-bottom: 3rem;
 }
 
-.hero-section{
+.hero-section-results{
     width: 100%;
     height: 50%;
     display: flex;
@@ -1611,7 +1662,7 @@ footer{
 }
 
 .unfollowers-list{
-    width: 100%;
+    width: clamp(60%, 90vw, 500px);
     height: 20rem;
     display: flex;
     flex-direction: column;
@@ -1622,8 +1673,17 @@ footer{
     overflow-x: hidden;
 }
 
-.unfollowers-list::-webkit-scrollbar{
-    display: none;
+.unfollowers-list::-webkit-scrollbar-thumb{
+    width: 2rem;
+}
+
+.unfollowers-list::-webkit-scrollbar-track{
+    width: 1rem;
+    background: transparent;
+}
+
+.unfollowers-list::-webkit-scrollbar-thumb{
+    background-color: var(--primary-color);
 }
 
 .non-follower{
@@ -1687,4 +1747,26 @@ footer{
 .results-footer{
     opacity: 1;
     margin-top: 4rem;
+}
+
+
+.PUC-container{
+    background-color: #e9e9e9;
+}
+
+@media (min-width: 720px){
+    .page-header{
+        font-size: 2.5rem;
+        margin: 3rem 5rem;
+    }
+
+    .followers-title{
+        font-size: 1.5rem;
+    }
+
+    .non-followers-title{
+        font-size: 1.5rem;
+    }
+
+
 }

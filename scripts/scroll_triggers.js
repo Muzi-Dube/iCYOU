@@ -7,7 +7,12 @@ export function onScrollAnimations() {
 }
 
 
-// This is data for the elements that will be animated on scroll. It includes references to the header, about section, hero section, instructions section, and footer, among others. These references are used in the various animation handler functions to add or remove classes that trigger CSS animations when the elements come into view.
+/* This is data for the elements that will be animated on scroll.
+ It includes references to the header, about section, hero section, 
+ instructions section, and footer, among others. 
+ These references are used in the various animation handler functions 
+ to add or remove classes that trigger CSS animations when the elements 
+ come into view.*/
 const elements = {
     headerContainer: document.querySelector('.header-container'),
     header: document.querySelector('.header'),

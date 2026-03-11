@@ -65,7 +65,7 @@ export function fileUploadHandler() {
             </div>
             <div class="caution-container">
               <p class="error-caution">If this error persists, please check the file format or try again later.</p>
-                <a href="#" class="help-link">Get Help</a>
+                <a href="page-unavailable.html" class="help-link">Get Help</a>
             </div>
           </div>
         `;
