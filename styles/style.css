@@ -7,15 +7,23 @@
 }
 
 :root{
+    /* Themes/Color Schemes */
     --primary-color: #8234db;
     --secondary-color: #c92ecc;
     --background-color: #f5f5f5;
     --text-color: #333333;
     --third-color: #ff6f61;
     --forth-color: #8d8d8d;
+
+    /* Font & Font Settings */
     --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --font-size-base: 1rem;
+    --header-size: clamp(2.5rem, 5vw, 3rem);
+    --intro-size: clamp(1.3rem, 2.5vw, 1.5rem);
+    --primary-font-size: clamp(1.1rem, 1vw, 1.3rem);
     --line-height-base: 1.5;
+
+    /* Stuctural Settings */
     --spacing-unit: 8px;
     --section-spacing: 10rem 0;
 }
@@ -29,20 +37,18 @@ html, body {
     font-family: var(--font-family);
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
-    margin: 0;
-    padding: 0;
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
 header{
-    transition: 0.5s ease-in;
+    transition: 0.8s ease-in;
     position: fixed;
     top: 1rem;
     --primary-color: #da00d6;
     background-color: var(--primary-color);
     box-shadow: 0 0 15px 30px var(--primary-color);
-    height: 15vh;
+    height: 20vh;
     width: 100%; 
     display: flex;
     justify-content: center;
@@ -56,10 +62,9 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 0.9rem 2rem;
-    border-radius: 30px;
-    margin-top: 1.5rem;
-    width: clamp(60%, 22rem, 85%);
-    height: 5rem;
+    border-radius: 40px;
+    width: 85%;
+    height: 6rem;
     --secondary-color:rgb(62, 0, 78);
     background: var(--secondary-color);
     box-shadow: 0 2.5px 6px 0.5px rgba(0, 0, 0, 0.228);
@@ -116,7 +121,7 @@ header{
     --third-color: #fa0798;
     font-family: 'Edu SA Hand', sans-serif;
     font-weight: 100;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: var(--third-color);
     animation-name: logoIn;
     animation-duration: 2s;
@@ -124,11 +129,9 @@ header{
 
 @keyframes logoIn {
     0% {
-        transform: translateY(-20px);
         opacity: 0;
     }
     100% {
-        transform: translateY(0);
         opacity: 1;
     }
 }
@@ -146,6 +149,42 @@ header{
     color: var(--primary-color);
 }
 
+.hamburger-menu{
+    width: 2rem;
+    height: 2rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    transition: background-color 0.2s ease-in;
+    animation-name: hamurgerMenuIn;
+    animation-duration: 1s;
+}
+
+.hamburger-menu:hover{
+    background-color: rgba(167, 167, 167, 0.097);
+    cursor: pointer;
+}
+
+.hamburger-menu-icon{
+    width: 3rem;
+    height: 3rem;
+    animation-name: hamburgerIconIn;
+    animation-duration: 2s;
+}
+
+@keyframes hamburgerIconIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
 .menu-out{
     display: none;
 }
@@ -156,12 +195,13 @@ header{
     justify-content: start;
     align-items: center;
     position: absolute;
-    top: 20vh;
-    background: rgb(245, 245, 245);
+    top: 22vh;
+    background: #ffffff8f;
+    backdrop-filter: blur(4px);
     box-shadow: 0 2.5px 6px 0.5px rgba(0, 0, 0, 0.228);
-    width: clamp(350px, 50vw, 60%);
+    width: 90%;
     border-radius: 30px;
-    height: 21rem;
+    height: 25rem;
     animation-name: menuIn;
     animation-duration: 1s;
 }
@@ -214,7 +254,7 @@ header{
 
 .navigation a{
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    font-weight: 400;
+    font-weight: 600;
     text-decoration: none;
     width: 100%;
     display: flex;
@@ -222,7 +262,7 @@ header{
     align-items: center;
     gap: 0.5rem;
     padding: 0.8rem 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
     transition: 0.2s ease-in;
     color: rgba(0, 0, 0, 0.744);
 }
@@ -245,7 +285,7 @@ header{
 }
 
 .BMAC-header{
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 100;
     font-style: italic;
     font-family: 'Edu SA Hand', Arial, Helvetica, sans-serif;
@@ -262,7 +302,7 @@ header{
     border: 1px solid rgba(0, 0, 0, 0.097);
     border-radius: 10px;
     width: 80%;
-    height: 3rem;
+    height: 4rem;
 }
 
 .pay-option-link{
@@ -271,7 +311,7 @@ header{
     justify-content: center;
     text-decoration: none;
     color:#333333;
-    background-color: rgb(114, 0, 146);
+    background-color: rgb(212, 55, 255);
     box-shadow: 0 2.5px 5px 0.5px rgba(0, 0, 0, 0.228);
     border: 0.1px solid rgba(0, 0, 0, 0.017);
     height: 100%;
@@ -281,11 +321,11 @@ header{
 }
 
 .pay-option-link:hover{
-    background-color: rgb(65, 0, 83);
+    background-color: rgb(178, 4, 232);
 }
 
 .professional-profiles-header{
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     font-size: 0.8rem;
     font-weight: 600;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
@@ -344,44 +384,7 @@ header{
     align-items: center;
 }
 
-.hamburger-menu{
-    width: 2rem;
-    height: 2rem;
-    padding: 1.5rem;
-    border-radius: 10px;
-    cursor: pointer;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: transparent;
-    transition: background-color 0.2s ease;
-    animation-name: hamurgerMenuIn;
-    animation-duration: 1s;
-}
-
-@keyframes hamurgerMenuIn{
-    0% {
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.menu-icon{
-    width: 3rem;
-    height: 3em;
-}
-
-.hamburger-menu:hover{
-    background-color: rgba(167, 167, 167, 0.097);
-    cursor: pointer;
-}
-
-#hero{
+.hero-section{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -389,7 +392,6 @@ header{
 }
 
 .hero-container{
-    margin-top: 2rem;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -404,8 +406,9 @@ header{
 }
 
 .hero-intro{
+    margin-top: 5rem;
     font-family: 'Edu SA Hand', Arial, Helvetica, sans-serif;
-    font-size: 3rem;
+    font-size: clamp(3.5rem, 20%, 5.5rem);
     font-weight: 100;
     animation-name: heroIntroIn;
     animation-duration: 1.5s;
@@ -424,8 +427,8 @@ header{
 
 .hero-subintro{
     font-family: 'Edu SA Hand', Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    font-weight: 100;
+    font-size: 1.1rem;
+    font-weight: 300;
     --text-color: #e1b9fa;
     color: var(--text-color);
     animation-name: heroSubIntroIn;
@@ -446,7 +449,7 @@ header{
 .get-started-btn{
     text-decoration: none;
     position: relative;
-    top: 5rem;
+    top: 20%;
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
     font-weight: bold;
@@ -471,7 +474,6 @@ header{
 }
 
 .get-started-btn:hover{
-    transform: scale(1.02);
     box-shadow: 0 0 6px 2px var(--secondary-color);
 }
 
@@ -488,7 +490,7 @@ header{
 .about-header{
     opacity: 0;
     font-family:'Special Gothic Expanded One', Arial, Helvetica, sans-serif;
-    font-size: 2rem;
+    font-size: var(--header-size);
     text-align: center;
     margin: 0 2rem;
 }
@@ -512,13 +514,13 @@ header{
 
 .about-intro{
     opacity: 0;
-    font-size: 1rem;
-    max-width: 600px;
+    max-width: 80vw;
+    font-size: var(--intro-size);
     text-align: center;
     --forth-color: #666565;
     color: var(--forth-color);
     font-weight: 300;
-    margin: 0 1.5rem;
+    margin: 0 1rem;
 }
 
 .about-intro-inview{
@@ -572,7 +574,7 @@ header{
 
 .upload-btn{
     padding: 0.8rem 0.5rem;
-    font-size: 1rem;
+    font-size: var(--intro-size);
     font-weight: bold;
     background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     color: white;
@@ -618,13 +620,13 @@ header{
 }
 
 .file-name{
-    font-size: 0.9rem;
+    font-size: var(--primary-font-size);
     color: var(--forth-color);
     font-style: italic;
     border: 2px dashed var(--forth-color);
     padding: 0.7rem 2rem 0.7rem 1.5rem;
     border-radius: 10px;
-    width: clamp(15rem, 60%, 5rem);
+    width: clamp(5rem, 55vw, 30rem);
     text-align: center;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -687,7 +689,7 @@ header{
 }
 
 .analyze-text{
-    font-size: 0.6rem;
+    font-size: var(--primary-font-size);
     color: rgba(186, 0, 228, 0.767);
     font-weight: 600;
     text-align: center;
@@ -697,7 +699,7 @@ header{
 
 .analyze-btn{
     padding: 0.8rem 4rem;
-    font-size: 1rem;
+    font-size: var(--intro-size);
     font-weight: bold;
     background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     color: white;
@@ -709,7 +711,6 @@ header{
 }
 
 .processing-screen{
-    font-size: 1.2rem;
     color: rgb(77, 77, 78);
     transition: 0.3s ease;
     display: flex;
@@ -733,11 +734,14 @@ header{
     }
 }
 
-.processing-text{
+.processing-text:first-child{
     animation-name: processingText;
     animation-duration: 1200ms;
     animation-iteration-count: infinite;
+    font-size: clamp(1.8rem, 2.5vw, 2rem);
     transition: 0.2s ease;
+    position: relative;
+    left: 1.5rem;
 }
 
 @keyframes processingText{
@@ -752,22 +756,22 @@ header{
     }
 }
 
-.processing-screen span{
+.processing-text span{
     animation-name: processingDots;
     animation-duration: 600ms;
     animation-iteration-count: infinite;
     font-size: 2rem;
 }
 
-.processing-screen span:first-child{
+.processing-text span:first-child{
     animation-delay: 200ms;
 }
 
-.processing-screen span:nth-child(2){
+.processing-text span:nth-child(2){
     animation-delay: 400ms;
 }
 
-.processing-screen span:last-child{
+.processing-text span:last-child{
     animation-delay: 600ms;
 }
 
@@ -781,7 +785,7 @@ header{
 }
 
 .processing-notice{
-    font-size: 0.6rem;
+    font-size: var(--primary-font-size);
     color: rgba(72, 72, 72, 0.767);
     font-weight: 600;
     text-align: center;
@@ -823,7 +827,7 @@ header{
 }
 
 .done-text{
-    font-size: 1rem;
+    font-size: var(--intro-size);
     font-weight: 500;
     color: rgb(2, 162, 58);
     font-family: 'Edu SA Hand',Arial, Helvetica, sans-serif;
@@ -839,7 +843,7 @@ header{
     align-items: center;
     gap: 0.5rem;
     padding: 0.8rem 0;
-    font-size: 1rem;
+    font-size: var(--intro-size);
     transition: 0.2s ease-in;
     color: rgb(255, 255, 255);
     background-color: #ad00fc;
@@ -883,7 +887,7 @@ header{
 }
 
 .error-message{
-    font-size: 0.8rem;
+    font-size: var(--intro-size);
     color: rgb(194, 65, 65);
     font-weight: 600;
     text-align: center;
@@ -903,20 +907,21 @@ header{
 
 .error-caution{
     text-align: center;
-    font-size: 0.6rem;
+    font-size: var(--primary-font-size);
     color: rgb(78, 78, 78);
+    margin: 0 3rem;
 }
 
 .help-link{
     text-align: center;
-    font-size: 0.6rem;
+    font-size: var(--primary-font-size);
     color: rgb(229, 0, 236);
     text-decoration: none;
 }
 
 .upload-notice-text{
     opacity: 0;
-    font-size: 0.8rem;
+    font-size: var(--primary-font-size);
     color: var(--forth-color);
     font-weight: 300;
     text-align: center;
@@ -952,7 +957,7 @@ header{
 .instructions-header{
     opacity: 0;
     font-family:'Special Gothic Expanded One', Arial, Helvetica, sans-serif;
-    font-size: 2rem;
+    font-size: var(--header-size);
     text-align: center;
     margin: 0 1rem 4rem;
 }
@@ -977,7 +982,7 @@ header{
 .mobile-guide{
     opacity: 0;
     margin-bottom: 2rem;
-    font-size: 1rem;
+    font-size: var(--primary-font-size);
     max-width: 600px;
     text-align: center;
     --forth-color: #666565;
@@ -1031,7 +1036,7 @@ header{
 .step-header{
     opacity: 0;
     font-family:'Edu SA Hand', Arial, Helvetica, sans-serif;
-    font-size: 2.5rem;
+    font-size: var(--header-size);
     font-weight: 100;
     text-align: center;
     color: var(--primary-color);
@@ -1117,7 +1122,7 @@ header{
 
 .step-description{
     opacity: 0;
-    font-size: 1rem;
+    font-size: var(--intro-size);
     margin: 1rem 2rem 2rem;
     text-align: center;
     --forth-color: #666565;
@@ -1199,7 +1204,7 @@ header{
 
 .instructions-notice-text{
     opacity: 0;
-    font-size: 0.8rem;
+    font-size: var(--font-size-base);
     color: var(--forth-color);
     font-weight: 300;
     text-align: center;
@@ -1229,19 +1234,28 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+}
+
+.why-us-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .why-us-header{
     opacity: 0;
     font-family:'Special Gothic Expanded One', Arial, Helvetica, sans-serif;
-    font-size: 2.2rem;
+    font-size: var(--header-size);
     text-align: center;
     margin: 0 2rem;
 }
 
 .why-us-point-header{
     font-family:'Edu SA Hand', Arial, Helvetica, sans-serif;
-    font-size: 1.5rem;
+    font-size: clamp(2rem, 2.5vw, 2.5rem);
     font-weight: 300;
     text-align: center;
     color: var(--secondary-color);
@@ -1269,7 +1283,23 @@ header{
     background-color: rgb(238, 238, 238);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 0.5rem 2rem;
-    max-width:clamp(25em, 70%, 200px);
+    width: clamp(25em, 40%, 40em);
+}
+
+@media(min-width: 760px){
+
+    .why-us-points-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+        width: 80%;
+        justify-self: center;
+    }
+
+    .why-us-points{
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .why-us-header-inview{
@@ -1294,7 +1324,7 @@ header{
     --forth-color: #666565;
     color: var(--forth-color);
     font-weight: 300;
-    font-size: 0.8rem;
+    font-size: var(--primary-font-size);
 }
 
 .why-us-points-inview{
@@ -1352,15 +1382,15 @@ footer{
 
 .footer-logo-section{
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
 
 .footer-logo{
     font-family: 'Edu SA Hand', sans-serif;
-    font-weight: 100;
-    font-size: 2rem;
+    font-weight: 300;
+    font-size: var(--header-size);
     --text-color: #3333333a;
     color: var(--text-color);
 }
@@ -1394,7 +1424,7 @@ footer{
 .footer-links-column a{
     color: var(--forth-color);
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: var(--primary-font-size);
     font-weight: 100;
     transition: 0.2s ease;
 }
@@ -1405,7 +1435,7 @@ footer{
 
 .footer-column-header{
     font-family: 'Special Gothic Expanded One', Arial, Helvetica, sans-serif;
-    font-size: 1.1rem;
+    font-size: var(--intro-size);
     color: var(--text-color);
     font-weight: 100;
     letter-spacing: 0.04em;
@@ -1427,8 +1457,8 @@ footer{
 }
 
 .social-link{
-    width: 3rem;
-    height: 3rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     background-color: #b8b8b8;
     display: flex;
@@ -1449,8 +1479,8 @@ footer{
 }
 
 .social-link img{
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .footer-bottom{
@@ -1465,8 +1495,16 @@ footer{
     font-weight: 100;
 }
 
-/* Responsive Footer */
-@media (max-width: 768px) {
+@media (min-width: 760px) {
+
+    .header-container{
+        width: 60%;
+    }
+
+    .menu-container{
+        width: 60%;
+    }
+
     .footer-content{
         grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
@@ -1482,7 +1520,7 @@ footer{
     }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 480px) {
     footer{
         padding: 2rem 1rem 1.5rem;
     }
@@ -1499,55 +1537,7 @@ footer{
     .footer-social-section{
         grid-column: 1;
     }
-
-    .footer-column-header{
-        font-size: 1rem;
-    }
 }
-
-@media(min-width: 720px){
-    .hero-intro{ 
-        font-size: 3.3rem;
-    }
-
-    .hero-subintro{
-        font-size: 1.3rem;
-    }
-
-    .about-header{
-        font-size: 2.5rem;
-        margin: 0 5rem;
-    }
-
-    .about-intro{
-        font-size: 1.3rem;
-        margin: 0 2rem;
-    }
-    
-    .file-name{
-        width: 40%;
-    }
-
-    .instructions-header{
-        font-size: 2.5rem;
-        margin: 0 5rem 2rem;
-    }
-
-    .step-description{
-        font-size: 1.2rem;
-        margin: 1rem 2rem 3rem;
-    }
-
-    .step-header{
-        font-size: 2.8rem;
-    }
-
-    .why-us-header{
-        font-size: 2.5rem;
-        margin: 0 5rem 2rem;
-    }
-}
-
 
 .header-results-page{
     position: fixed;
@@ -1611,12 +1601,13 @@ footer{
     width: 98%;
     height: 9rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-self: center;
+    gap: 1rem
 }
 
 .followers-container, .non-followers-container{
-    width: 45%;
+    width: clamp(150px, 45%, 23em);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1662,7 +1653,7 @@ footer{
 }
 
 .unfollowers-list{
-    width: clamp(60%, 90vw, 500px);
+    width: clamp(80%, 100vw, 400px);
     height: 20rem;
     display: flex;
     flex-direction: column;
@@ -1688,21 +1679,24 @@ footer{
 
 .non-follower{
     flex-shrink: 0;
-    width: 90%;
+    width: clamp(150px, 95%, 30em);
     height: 5rem;
     border-radius: 20px;
     margin: 0.5rem 0;
     display: flex;
     justify-content: space-around;
-    gap: 1rem;
     align-items: center;
+    gap: 1.5rem;
     --background-color: #f4f4f4;
     box-shadow: 0 2.5px 4px 0.5px rgba(0, 0, 0, 0.228);
     background-color: var(--background-color);
 }
 
 .handle-container{
-    width: 10rem;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
     overflow-x: scroll;
     overflow-y: hidden;
 }
@@ -1716,11 +1710,20 @@ footer{
     font-weight: 600;
 }
 
+.action-btns-container{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 0.5rem;
+    height: 100%;
+    width: 45%;
+}
+
 .view-btn{
     text-decoration: none;
     color: rgb(255, 255, 255);
-    padding: 0.4rem 1rem;
-    font-size: 0.9rem;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.8rem;
     font-weight: bold;
     --secondary-color: rgb(155, 0, 155);
     background-color: var(--secondary-color);
@@ -1728,10 +1731,10 @@ footer{
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s ease;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.2s ease;
 }
 
 .view-btn:hover{
@@ -1741,7 +1744,25 @@ footer{
 
 .view-btn-svg{
     position: relative;
-    left: 0.3rem;
+    left: 0.2rem;
+}
+
+.remove-profile-btn{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 0.2rem 0.2rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    background-color: transparent;
+    color: #e2e2e2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.remove-profile-btn:hover{
+    background-color: rgba(141, 0, 31, 0.041);
 }
 
 .results-footer{
@@ -1767,6 +1788,4 @@ footer{
     .non-followers-title{
         font-size: 1.5rem;
     }
-
-
 }
