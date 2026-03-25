@@ -38,7 +38,6 @@ const elements = {
     footerContainer: document.querySelector('.footer'),
 }
 
-
 /*This Function handles the header animations when the user
 scrolls through the page. It uses IntersectionObserver to detect
 when the about section is in view and changes the header's
@@ -49,30 +48,16 @@ function headerAnimationsHandler() {
     const headerObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) {
-                elements.headerContainer.classList.add('header-container-changed');
-                elements.header.classList.add('header-changed');
-            }
-            else{
-                elements.headerContainer.classList.remove('header-container-changed');
-                elements.header.classList.remove('header-changed');
-            }
+                    elements.headerContainer.classList.add('header-container-changed');
+                    elements.header.classList.add('header-changed');
+                }else{
+                    elements.headerContainer.classList.remove('header-container-changed');
+                    elements.header.classList.remove('header-changed');
+                }
         });
     }, { threshold: 0.3 });
 
     headerObserver.observe(elements.heroSection);
-
-    /*onst headerReturnObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                elements.headerContainer.classList.remove('header-container-changed');
-                elements.header.classList.remove('header-changed');
-            } else {
-                elements.headerContainer.classList.add('header-container-changed');
-                elements.header.classList.add('header-changed');
-            }
-        });
-        }, { threshold: 0.3 });
-    headerReturnObserver.observe(elements.HeroSection);*/
 
 }
 

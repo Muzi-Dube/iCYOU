@@ -12,14 +12,25 @@
     --secondary-color: #c92ecc;
     --background-color: #f5f5f5;
     --text-color: #333333;
+    --text-color-secondary: #333333;
     --third-color: #ff6f61;
     --forth-color: #8d8d8d;
+    --btn-gradient: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+
+    /* Dark Mode Color Schemes*/
+    --primary-DM-gradient: linear-gradient(to bottom, #6b006a, #660066fe, #3e0054, #290139);
+    --primary-DM-purple: #290139;
+    --secondary-DM-purple:  #3e0054;
+    --light-DM-purple: #6b006a;
+    --background-color-DM: #111111;
+    --text-color-DM: #e8e8e8;
+    --light-grey: #1b1b1b;
 
     /* Font & Font Settings */
     --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --font-size-base: 1rem;
-    --header-size: clamp(2.5rem, 5vw, 3rem);
-    --intro-size: clamp(1.3rem, 2.5vw, 1.5rem);
+    --header-size: clamp(2.3rem, 5vw, 3rem);
+    --intro-size: clamp(1.2rem, 2.5vw, 1.5rem);
     --primary-font-size: clamp(1.1rem, 1vw, 1.3rem);
     --line-height-base: 1.5;
 
@@ -30,7 +41,7 @@
 
 
 
-html, body {
+html, .body {
     background-color: var(--background-color);
     color: var(--text-color);
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
@@ -41,8 +52,13 @@ html, body {
     scroll-behavior: smooth;
 }
 
+.body-DM{
+    background-color: var(--background-color-DM);
+    color: var(--text-color-DM);
+}
+
 header{
-    transition: 0.8s ease-in;
+    transition: 0.8s ease-in-out;
     position: fixed;
     top: 1rem;
     --primary-color: #da00d6;
@@ -56,8 +72,13 @@ header{
     z-index: 500;
 }
 
+.body-DM header{
+    background-color: var(--light-DM-purple);
+    box-shadow: 0 0 15px 30px var(--light-DM-purple);
+}
+
 .header-container{
-    transition: 0.8s ease-in;
+    transition: 0.8s ease-in-out;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -72,16 +93,30 @@ header{
 }
 
 .header-changed{
-    transition:  0.5s ease-in;
+    transition:  0.5s ease-in-out;
     background-color: var(--background-color);
     box-shadow: 0 0 15px 30px var(--background-color);
 }
 
+.body-DM .header-changed{
+    transition:  0.5s ease-in-out;
+    background-color: var(--background-color-DM);
+    box-shadow: 0 0 15px 30px var(--background-color-DM);
+}
+
 .header-container-changed{
-    transition: background-color 0.8s ease-in;
+    transition: background-color 0.8s ease-in-out;
     background: rgb(244, 244, 244);
     animation-name: menuChange;
     animation-duration: 1s;
+}
+
+.body-DM .header-container-changed{
+    transition: background-color 0.8s ease-in-out;
+    background: rgb(244, 244, 244);
+    animation-name: menuChange;
+    animation-duration: 1s;
+    background-color: var(--light-grey);
 }
 
 @keyframes menuChange {
@@ -149,6 +184,53 @@ header{
     color: var(--primary-color);
 }
 
+.logo-and-theme-switcher-wrapper{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 1rem;
+    height: 100%;
+    width: 50%;
+}
+
+.theme-switcher-btn{
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: toggleIn 1.5s;
+}
+
+@keyframes toggleIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.theme-switcher-btn:hover{
+    background-color: rgba(167, 167, 167, 0.097);
+    cursor: pointer;
+}
+
+.theme-switcher-icon{
+    animation: switcherIconIn 1s;
+}
+
+@keyframes switcherIconIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
 .hamburger-menu{
     width: 2rem;
     height: 2rem;
@@ -170,8 +252,6 @@ header{
 }
 
 .hamburger-menu-icon{
-    width: 3rem;
-    height: 3rem;
     animation-name: hamburgerIconIn;
     animation-duration: 2s;
 }
@@ -204,6 +284,11 @@ header{
     height: 25rem;
     animation-name: menuIn;
     animation-duration: 1s;
+}
+
+.body-DM .menu-container{
+    background: #9e9e9eb4;
+    backdrop-filter: blur(4px);
 }
 
 @keyframes menuIn{
@@ -397,18 +482,65 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 6rem;
     text-align: center;
     color: white;
     padding: 0 1rem;
     background-image: linear-gradient(to bottom, #cb03c8, #e900e9fe, #bb00ff, rgb(96, 0, 131));
     width: 100vw;
+    animation: heroContainerIn 1.5s ease-in-out;
+}
+
+@keyframes heroContainerIn{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.7;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.body-DM .hero-container{
+    animation: heroContainerDM 1.5s ease-in-out;
+    background-image: var(--primary-DM-gradient);
+}
+
+@keyframes heroContainerDM{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.hero-intro-wrapper{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.get-started-btn-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
 }
 
 .hero-intro{
-    margin-top: 5rem;
+    margin-top: 10rem;
     font-family: 'Edu SA Hand', Arial, Helvetica, sans-serif;
-    font-size: clamp(3.5rem, 20%, 5.5rem);
+    font-size: clamp(3.3rem, 5vw + 1rem, 4rem);
     font-weight: 100;
     animation-name: heroIntroIn;
     animation-duration: 1.5s;
@@ -448,12 +580,10 @@ header{
 
 .get-started-btn{
     text-decoration: none;
-    position: relative;
-    top: 20%;
     padding: 0.8rem 1.5rem;
-    font-size: 1rem;
+    font-size: var(--intro-size);
     font-weight: bold;
-    background-image: linear-gradient(to left, #901467, #ff00ee);
+    background-image: var(--btn-gradient);
     color: #dfdfdf;
     border: none;
     border-radius: 30px;
@@ -517,8 +647,6 @@ header{
     max-width: 80vw;
     font-size: var(--intro-size);
     text-align: center;
-    --forth-color: #666565;
-    color: var(--forth-color);
     font-weight: 300;
     margin: 0 1rem;
 }
@@ -576,8 +704,8 @@ header{
     padding: 0.8rem 0.5rem;
     font-size: var(--intro-size);
     font-weight: bold;
-    background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-    color: white;
+    background-image: var(--btn-gradient);
+    color: var(--text-color-DM);
     border: none;
     border-radius: 15px;
     cursor: pointer;
@@ -621,7 +749,6 @@ header{
 
 .file-name{
     font-size: var(--primary-font-size);
-    color: var(--forth-color);
     font-style: italic;
     border: 2px dashed var(--forth-color);
     padding: 0.7rem 2rem 0.7rem 1.5rem;
@@ -635,7 +762,6 @@ header{
 
 .file-selected{
     --forth-color: #7403bb23;
-    color: #605f60;
     border: 1px solid var(--forth-color);
     background-color: #cc8fff01;
     font-weight: 600;
@@ -701,7 +827,7 @@ header{
     padding: 0.8rem 4rem;
     font-size: var(--intro-size);
     font-weight: bold;
-    background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    background-image: var(--btn-gradient);
     color: white;
     border: none;
     border-radius: 15px;
@@ -985,8 +1111,6 @@ header{
     font-size: var(--primary-font-size);
     max-width: 600px;
     text-align: center;
-    --forth-color: #666565;
-    color: var(--forth-color);
     font-weight: 300;
     line-height: 1.6;
 }
@@ -1125,8 +1249,6 @@ header{
     font-size: var(--intro-size);
     margin: 1rem 2rem 2rem;
     text-align: center;
-    --forth-color: #666565;
-    color: var(--forth-color);
     font-weight: 300;
     line-height: 1.6;
 }
@@ -1280,10 +1402,14 @@ header{
     gap: 0.5rem;
     padding: 1rem;
     border-radius: 15px;
-    background-color: rgb(238, 238, 238);
+    background-color: #eeeeee;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 0.5rem 2rem;
-    width: clamp(25em, 40%, 40em);
+    width: clamp(90vw, 40em, 20vw);
+}
+
+.body-DM .why-us-points{
+    background-color: var(--light-grey);
 }
 
 @media(min-width: 760px){
@@ -1321,8 +1447,6 @@ header{
 
 .why-us-point{
     text-align: center;
-    --forth-color: #666565;
-    color: var(--forth-color);
     font-weight: 300;
     font-size: var(--primary-font-size);
 }
@@ -1351,11 +1475,15 @@ header{
 }
 
 /* Footer Styles */
-footer{
+.footer{
     opacity: 0;
     background-color: rgb(238, 238, 238);
     margin-top: 10rem;
     padding: 3rem 2rem 2rem;
+}
+
+.body-DM .footer{
+    background-color: var(--light-grey);
 }
 
 .footer-container{
@@ -1422,21 +1550,21 @@ footer{
 }
 
 .footer-links-column a{
-    color: var(--forth-color);
     text-decoration: none;
     font-size: var(--primary-font-size);
     font-weight: 100;
     transition: 0.2s ease;
+    --text-color: #b1b1b1;
+    color: var(--text-color);
 }
 
 .footer-links-column a:hover{
-    color: var(--primary-color);
+    color: var(--third-color);
 }
 
 .footer-column-header{
     font-family: 'Special Gothic Expanded One', Arial, Helvetica, sans-serif;
     font-size: var(--intro-size);
-    color: var(--text-color);
     font-weight: 100;
     letter-spacing: 0.04em;
     margin-bottom: 0.5rem;
