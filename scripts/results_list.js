@@ -1,6 +1,7 @@
 export function results(nonFollowersList, numFollowersAnalyzed, numNonFollowers){
-    // Retrieve from sessionStorage if called without parameters
-    if (!nonFollowersList && !numFollowersAnalyzed && !numNonFollowers) {
+
+    localStorage.clear();
+    
     // List of non followers
       const NFBStored = localStorage.getItem('notFollowingBack');
       nonFollowersList = NFBStored ? JSON.parse(NFBStored) : [];
@@ -10,9 +11,9 @@ export function results(nonFollowersList, numFollowersAnalyzed, numNonFollowers)
     // Number of non followers total
       const NNFStored = localStorage.getItem('numNonFollowers');
       numNonFollowers = NNFStored ? JSON.parse(NNFStored) : [];
-    }else{
-        return;
-    }
+    
+    // If nothing in storage, return.
+    if (!NFAStored || !NNFStored) return;
 
     let html =``;
 

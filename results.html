@@ -4,29 +4,44 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Results - iCYOU</title>
-        <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/results-style.css">
         <link rel='icon' type="image/svg+xml" href="./assets/iCYOU_logo.svg">
         <script type="module" src="./scripts/main_results.js" defer></script>
     </head>
 
-    <body>
+    <body class="body">
          <header class="header-results-page">
+            <div class="header-container header-container-results">
+                <div class="hamburger-container">
+                    <button class="hamburger-menu js-menu-btn">
+                        <img src="./assets/menu-alt-03-svgrepo-com.svg" alt="menu icon" width="45" height="45" class="hamburger-menu-icon">
+                    </button>
+                </div>
+                <div class="logo-and-theme-switcher-wrapper">
+                    <button class="theme-switcher-btn">
+                        <img src="./assets/sun-svgrepo-com.svg" width="30" height="30">
+                    </button>
+                    <a href="index.html" class="iCYOU-home-link">
+                        <span class="logo"><span class="logo-i">i</span>CYOU</span>
+                    </a>
+                </div>
+            </div>
             <div class="menu-out js-menu-out">
                 <div class="navigation-container">
                     <nav class="navigation">
                         <a href="index.html">Home</a>
-                        <a href="page-unavailable.html"><span>About</span></a>
-                        <a href="page-unavailable.html"><span>FAQ</span></a>
-                        <a href="page-unavailable.html"><span>Help</span></a>
+                        <a href="page-unavailable.html">About</a>
+                        <a href="page-unavailable.html">FAQ</a>
+                        <a href="page-unavailable.html">Help</a>
                     </nav>
                     <div class="options-menu">
                         <h2 class="BMAC-header">Buy Me A Coffee<span><img src="./assets/buy-me-coffee-icon.svg" width="20" height="20"></span></h2>
                         <div class="payment-links">
                             <a href="page-unavailable.html" class="pay-option-link">
-                                <img src="./assets/stripe-svgrepo-com.svg" alt="Stripe link" class="stripe-svg" width="70" height="70">
+                                <img src="./assets/Flutterwave.svg" alt="Stripe link" class="stripe-svg" width="150" height="150">
                             </a>
                         </div> 
-                        <h2 class="professional-profiles-header">Follow Me</h2>
+                        <h2 class="professional-profiles-header">Other Links</h2>
                         <div class="professional-profiles">
                             <a href="mailto:@101muzi.io@gmail.com" class="professional-profile"><img src="./assets/gmail-icon.svg" alt="Gmail" width="25" height="25"></a>
                             <a href="https://github.com/MUZI101-DIY" class="professional-profile"><img src="./assets/github-icon.svg" alt="Github" width="25" height="25"></a>
@@ -35,18 +50,12 @@
                     </div>
                 </div>
                 <div class="menu-footer">
-                    <div class="footer-logo-section">
-                        <p class="footer-logo"><span class="footer-logo-i">i</span>CYOU</p>
+                    <div class="menu-footer-logo-container">
+                        <p class="footer-logo">
+                            <span class="footer-logo-i">i</span>CYOU
+                        </p>
                     </div>
                 </div>
-            </div>
-            <div class="header-container-results">
-                <button class="hamburger-menu js-menu-btn">
-                    <img src="./assets/menu.svg" alt="menu icon" width="40" height="40" class="menu-icon">
-                </button>
-                <a href="index.html" class="iCYOU-home-link">
-                    <span class="logo"><span class="logo-i">i</span>CYOU</span>
-                </a>
             </div>
         </header>
         
@@ -60,7 +69,9 @@
                                 Analyzed
                             </h2>
                             <div class="value-container">
-                                <img src="./assets/account-avatar-male-man-people-person-svgrepo-com.svg" height="30" width="30" class="followers-svg">
+                                <div class="analyzed-icon">
+                                    <img src="./assets/account-avatar-male-man-people-person-svgrepo-com.svg" height="30" width="30" class="followers-svg">
+                                </div>
                                 <p class="followers-info-value">0</p>
                             </div>
                         </div>
@@ -69,14 +80,20 @@
                                 Non Followers
                             </h2>
                             <div class="non-followers-value-container">
-                                <img src="./assets/avatar-delete-profile-remove-unfollow-user-svgrepo-com.svg" height="30" width="30" class="non-followers-svg">
+                                <div class="non-followers-icon">
+                                    <img src="./assets/avatar-delete-profile-remove-unfollow-user-svgrepo-com.svg" height="30" width="30" class="non-followers-svg">
+                                </div>
                                 <p class="non-followers-info-value">
                                     0
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div class="unfollowers-list"></div>
+                    <div class="unfollowers-list">
+                        <div class="no-list-yet">
+                            <p>No List Yet</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
@@ -119,7 +136,7 @@
                         <h3 class="footer-column-header">Follow Us</h3>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/sakhumuzi-dube-566405356/" class="social-link" aria-label="Social Link 1">
-                                <img src="./assets/linkedin-svgrepo-com.svg" alt="linkedin" width="24" height="24">
+                                <img src="./assets/linkedin-svgrepo-com.svg" alt="linkedin" width="30" height="30">
                             </a>
                             <a href="https://github.com/MUZI101-DIY" class="social-link" aria-label="Social Link 2">
                                 <img src="./assets/github-142-svgrepo-com.svg" alt="github" width="24" height="24">
