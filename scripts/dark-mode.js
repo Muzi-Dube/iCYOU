@@ -7,15 +7,24 @@ export function darkModeToggler(){
 
     if(preferredTheme === 'dark'){
         bodyElement.classList.add('body-DM');
-    }else{
-        bodyElement.classList.remove('body-DM');
+        themeTogglerBtn.innerHTML ='<img src="./assets/moon-svgrepo-com.svg" width="30" height="30" class="theme-switcher-icon">';
+        if(nonFollowersIcon){
+            followersIcon.innerHTML = '<img src="./assets/account-avatar-male-man-people-person.svg" height="30" width="30" class="followers-svg">';
+            nonFollowersIcon.innerHTML = '<img src="./assets/avatar-delete-profile-remove-unfollow-user.svg" height="30" width="30" class="non-followers-svg">';
+        }
     }
 
     themeTogglerBtn.addEventListener('click', () => {
+
         const isDarkMode = bodyElement.classList.toggle('body-DM');
         themeTogglerBtn.innerHTML = isDarkMode ? '<img src="./assets/moon-svgrepo-com.svg" width="30" height="30" class="theme-switcher-icon">': '<img src="./assets/sun-svgrepo-com.svg" width="30" height="30" class="theme-switcher-icon">';
-        followersIcon.innerHTML = isDarkMode ? '<img src="./assets/account-avatar-male-man-people-person.svg" height="30" width="30" class="followers-svg">' : '<img src="./assets/account-avatar-male-man-people-person-svgrepo-com.svg" height="30" width="30" class="followers-svg">';
-        nonFollowersIcon.innerHTML = isDarkMode ? '<img src="./assets/avatar-delete-profile-remove-unfollow-user.svg" height="30" width="30" class="non-followers-svg">' : '<img src="./assets/avatar-delete-profile-remove-unfollow-user-svgrepo-com.svg" height="30" width="30" class="non-followers-svg">';
+
+        if(followersIcon && nonFollowersIcon){
+            followersIcon.innerHTML = isDarkMode ? '<img src="./assets/account-avatar-male-man-people-person.svg" height="30" width="30" class="followers-svg">' : '<img src="./assets/account-avatar-male-man-people-person-svgrepo-com.svg" height="30" width="30" class="followers-svg">';
+
+            nonFollowersIcon.innerHTML = isDarkMode ? '<img src="./assets/avatar-delete-profile-remove-unfollow-user.svg" height="30" width="30" class="non-followers-svg">' : '<img src="./assets/avatar-delete-profile-remove-unfollow-user-svgrepo-com.svg" height="30" width="30" class="non-followers-svg">';
+        }
+
         localStorage.setItem('preferredTheme', isDarkMode ? 'dark' : 'light');
     });
 }

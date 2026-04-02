@@ -1,13 +1,13 @@
 importScripts("https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js");
 
 onmessage = async function(e) {
-  const file = e.data; // The fucking blob 
+  const file = e.data; // blob
   const zip = await JSZip.loadAsync(file);
 
-  //looking for the fuckin files
+  //looking for the files
   let instagramFolder = null;
   for (const key in zip.files) {
-    if (key.includes("instagram") || key.includes("connections")) {
+    if (key.includes("connections")) {
       instagramFolder = key.split("/")[0];
       break;
     }

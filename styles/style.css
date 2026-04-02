@@ -58,8 +58,20 @@ html, .body {
     color: var(--text-color-DM);
 }
 
+.body::-webkit-scrollbar{
+    width: 9px;
+}
+
+.body::-webkit-scrollbar-thumb{
+    background: var(--light-grey);
+    border-radius: 3px;
+}
+
+.body::-webkit-scrollbar-track{
+    background: var(--text-color-secondary);
+}
+
 header{
-    transition: 0.8s ease-in-out;
     position: fixed;
     top: 1rem;
     --primary-color: #da00d6;
@@ -486,51 +498,34 @@ header{
     text-align: center;
     color: white;
     padding: 0 1rem;
-    background-image: linear-gradient(to bottom, #cb03c8, #e900e9fe, #bb00ff, rgb(133, 118, 138));
+    background-image: linear-gradient(to bottom, #cb03c8, #e900e9fe, #bb00ff, #6f0094);
     width: 100vw;
-    animation: heroContainerIn 1.5s ease-in-out;
-}
-
-@keyframes heroContainerIn{
-    0%{
-        opacity: 1;
-    }
-    50%{
-        opacity: 0.7;
-    }
-    100%{
-        opacity: 1;
-    }
 }
 
 .body-DM .hero-container{
-    animation: heroContainerDM 1.5s ease-in-out;
     background-image: var(--primary-DM-gradient);
 }
 
-@keyframes heroContainerDM{
-    0%{
-        opacity: 1;
-    }
-    50%{
-        opacity: 0.5;
-    }
-    100%{
-        opacity: 1;
-    }
-}
 
 .hero-intro-wrapper{
-    height: 60%;
+    height: 65%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
+}
+
+@media (min-height: 760px){
+    .hero-intro-wrapper{
+        position: relative;
+        bottom: 6rem;
+    }
 }
 
 .get-started-btn-wrapper{
     width: 100%;
+    height: 35;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -538,7 +533,6 @@ header{
 }
 
 .hero-intro{
-    margin-top: 10rem;
     font-family: 'Edu SA Hand', Arial, Helvetica, sans-serif;
     font-size: clamp(3.3rem, 5vw + 1rem, 4rem);
     font-weight: 100;
@@ -1613,7 +1607,7 @@ header{
 }
 
 .body-DM .social-link{
-    background-color: var(--light-grey);
+    background-color: rgb(31, 31, 31);
 }
 
 .social-link:hover{

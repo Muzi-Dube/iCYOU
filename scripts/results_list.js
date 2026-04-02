@@ -1,7 +1,4 @@
 export function results(nonFollowersList, numFollowersAnalyzed, numNonFollowers){
-
-    localStorage.clear();
-    
     // List of non followers
       const NFBStored = localStorage.getItem('notFollowingBack');
       nonFollowersList = NFBStored ? JSON.parse(NFBStored) : [];

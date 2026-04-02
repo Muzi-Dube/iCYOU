@@ -1,4 +1,4 @@
-import { menuToggleHandler } from './results_menu.js';
+import { menuToggleHandler } from './menu_toggle.js';
 import { results } from './results_list.js';
 import { darkModeToggler } from './dark-mode.js';
 
