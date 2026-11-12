@@ -4,9 +4,9 @@
 
 [![Live app](https://img.shields.io/badge/Live_app-icyou.netlify.app-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://icyou.netlify.app)
 ![Status](https://img.shields.io/badge/status-in_development-F59E0B?style=for-the-badge)
-![PRs welcome](https://img.shields.io/badge/PRs-welcome-22C55E?style=for-the-badge)
+![PRs Required](https://img.shields.io/badge/PRs-welcome-22C55E?style=for-the-badge)
 
-iCYOU is an open-source tool that shows you which Instagram accounts you follow that don't follow you back. It works from the JSON data Instagram lets you export, and everything runs **locally in your browser**: no login, no backend, no uploads.
+iCYOU is an open-source tool that shows you which Instagram accounts you follow that don't follow you back. It works from the JSON data Instagram lets you export, and everything runs **locally in your browser**: no login, no backend. All you do is upload a zip file and get results.
 
 It's also a collaborative project for student developers who want to work on real software, learn from each other, and build experience they can show in a portfolio.
 
