@@ -22,7 +22,6 @@ onmessage = async function(e) {
     // Extract followers.json and following.json
     const followersData = await zip.file(`${instagramFolder}/followers_and_following/followers_1.json`).async("string");
     const followingFile = await zip.file(`${instagramFolder}/followers_and_following/following.json`);
-    // Check if following.json exists
     let following = [];
     if (followingFile) {
       const followingData = await followingFile.async("string");
@@ -37,8 +36,7 @@ onmessage = async function(e) {
     // Compute non-followers (people you follow but don't follow you back)
     const followersSet = new Set(followers);
     const notFollowingBack = following.filter(user => !followersSet.has(user));
-
-    // Save number of followers analyzed
+  
     const numFollowersAnalyzed = parsedFollowersData.length;
 
     const notFollowingBackWithLinks = notFollowingBack.map(user => ({
@@ -49,5 +47,6 @@ onmessage = async function(e) {
     postMessage({ notFollowingBack: notFollowingBackWithLinks, numFollowersAnalyzed});
 
   } catch (error) {
-    postMessage({ error: error.message });}
+    postMessage({ error: error.message });
+  }
 };
